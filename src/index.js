@@ -29,8 +29,7 @@ function searchHandler(e) {
       }
       makeMarkupCountryList(countries);
     })
-    .catch(err => {
-      console.log(err);
+    .catch(() => {
       clearMarkup();
       if (e.target.value.trim()) {
         Notify.failure('There is no country with that name');
