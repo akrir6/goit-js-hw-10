@@ -10,7 +10,7 @@ import {
 
 Notify.init({
   position: 'center-top',
-  timeout: 200,
+  timeout: 2000,
   cssAnimationStyle: 'from-top',
   showOnlyTheLastOne: true,
 });
