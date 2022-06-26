@@ -12,9 +12,9 @@ const DEBOUNCE_DELAY = 300;
 
 document
   .querySelector('#search-box')
-  .addEventListener('input', debounce(onSaerchBoxInput, DEBOUNCE_DELAY));
+  .addEventListener('input', debounce(onSearchBoxInput, DEBOUNCE_DELAY));
 
-function onSaerchBoxInput(e) {
+function onSearchBoxInput(e) {
   if (!e.target.value.trim()) {
     clearMarkup();
     return;
