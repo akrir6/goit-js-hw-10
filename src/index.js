@@ -8,6 +8,13 @@ import {
   clearMarkup,
 } from './makeMarkup';
 
+Notify.init({
+  position: 'center-top',
+  timeout: 200,
+  cssAnimationStyle: 'from-top',
+  showOnlyTheLastOne: true,
+});
+
 const DEBOUNCE_DELAY = 300;
 
 document
@@ -29,8 +36,7 @@ function searchHandler(countries) {
   if (countries.length > 10) {
     clearMarkup();
     return Notify.info(
-      'Too many matches found. Please enter a more specific name.',
-      { timeout: 1000 }
+      'Too many matches found. Please enter a more specific name.'
     );
   }
   if (countries.length === 1) {
@@ -42,5 +48,5 @@ function searchHandler(countries) {
 
 function errorHandler() {
   clearMarkup();
-  Notify.failure('There is no country with that name', { timeout: 1000 });
+  Notify.failure('There is no country with that name');
 }
